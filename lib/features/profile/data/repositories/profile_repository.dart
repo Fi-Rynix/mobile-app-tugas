@@ -8,9 +8,9 @@ class ProfileRepository {
 
     // Data dummy profil
     return ProfileModel(
-      name: 'Admin DATT',
+      name: 'Admin D4-TI',
       role: 'Administrator',
-      email: 'admin.datt@example.com',
+      email: 'admin.d4ti@example.com',
       phone: '+62 812-3456-7890',
       address: 'Jalan Raya No. 123, Kota Indonesia',
       photoUrl: 'https://via.placeholder.com/150',

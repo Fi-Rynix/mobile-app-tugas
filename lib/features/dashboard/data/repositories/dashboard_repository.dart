@@ -8,33 +8,33 @@ class DashboardRepository {
 
     //dummy
     return DashboardData(
-      userName: 'Admin DATT',
+      userName: 'Admin D4-TI',
       lastUpdate: DateTime.now(),
       stats: [
         DashboardStats(
           title: 'Total Mahasiswa',
-          value: '1,234',
+          value: '6,767',
           subtitle: 'Mahasiswa terdaftar',
           // percentage: 8.5,
           // isIncrease: true,
         ),
         DashboardStats(
           title: 'Mahasiswa Aktif',
-          value: '1,180',
+          value: '1,420',
           subtitle: 'Sedang kuliah',
           // percentage: 5.2,
           // isIncrease: true,
         ),
         DashboardStats(
           title: 'Jumlah Kelas',
-          value: '48',
+          value: '67',
           subtitle: 'Kelas semester ini',
           // percentage: 2.1,
           // isIncrease: false,
         ),
         DashboardStats(
           title: 'Tingkat Kelulusan',
-          value: '94%',
+          value: '67%',
           subtitle: 'Tahun ini',
           // percentage: 3.5,
           // isIncrease: true,
