@@ -19,7 +19,7 @@ class MahasiswaCommentRepository {
     }
   }
 
-  /// Mengambil komentar menggunakan dio
+  // Mengambil komentar menggunakan dio
   Future<List<MahasiswaCommentModel>> getCommentsDio() async {
     final dio = Dio();
     final response = await dio.get('https://jsonplaceholder.typicode.com/comments');

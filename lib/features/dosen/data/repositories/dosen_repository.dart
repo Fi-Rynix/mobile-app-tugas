@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
 
 class DosenRepository {
-  /// Mendapatkan daftar dosen
+  //// Mendapatkan daftar dosen
   // Future<List<DosenModel>> getDosenList() async {
   //   final response = await http.get(
   //     Uri.parse('https://jsonplaceholder.typicode.com/users'),
