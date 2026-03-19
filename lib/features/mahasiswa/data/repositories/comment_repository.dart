@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:first_proj/features/mahasiswa/data/models/mahasiswa_comment_model.dart';
+import 'package:first_proj/features/mahasiswa/data/models/comment_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
 

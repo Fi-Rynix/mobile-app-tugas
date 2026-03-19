@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:first_proj/features/mahasiswa/data/models/mahasiswa_model.dart';
 import 'package:first_proj/features/mahasiswa/data/repositories/mahasiswa_repository.dart';
-import 'package:first_proj/features/mahasiswa/data/models/mahasiswa_comment_model.dart';
-import 'package:first_proj/features/mahasiswa/data/repositories/mahasiswa_comment_repository.dart';
+import 'package:first_proj/features/mahasiswa/data/models/comment_model.dart';
+import 'package:first_proj/features/mahasiswa/data/repositories/comment_repository.dart';
 
 // Repository provider untuk komentar
 final mahasiswaCommentRepositoryProvider = Provider((ref) {

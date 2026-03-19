@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:first_proj/core/widgets/common_widget.dart';
 import 'package:first_proj/features/mahasiswa/presentation/providers/mahasiswa_provider.dart';
 import 'package:first_proj/features/mahasiswa/presentation/widgets/mahasiswa_widget.dart';
-import 'package:first_proj/features/mahasiswa/presentation/widgets/mahasiswa_comment_widget.dart';
-import 'package:first_proj/features/mahasiswa/data/repositories/mahasiswa_comment_repository.dart';
+import 'package:first_proj/features/mahasiswa/presentation/widgets/comment_widget.dart';
+import 'package:first_proj/features/mahasiswa/data/repositories/comment_repository.dart';
 
 class MahasiswaPage extends StatefulWidget {
   const MahasiswaPage({super.key});

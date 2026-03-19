@@ -237,7 +237,7 @@ class DashboardPage extends ConsumerWidget {
                                   case 'Dosen':
                                     targetPage = const DosenPage();
                                     break;
-                                  case 'Profil':
+                                  case 'Lihat Profil':
                                     targetPage = const ProfilePage();
                                     break;
                                 }

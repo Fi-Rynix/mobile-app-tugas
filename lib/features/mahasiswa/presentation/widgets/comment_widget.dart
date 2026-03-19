@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:first_proj/features/mahasiswa/data/models/mahasiswa_comment_model.dart';
+import 'package:first_proj/features/mahasiswa/data/models/comment_model.dart';
 
 class MahasiswaCommentCard extends StatelessWidget {
   final MahasiswaCommentModel comment;

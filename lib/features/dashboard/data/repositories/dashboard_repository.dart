@@ -27,8 +27,8 @@ class DashboardRepository {
           subtitle: 'Jumlah dosen',
         ),
         DashboardStats(
-          title: 'Profil',
-          value: 'Lihat',
+          title: 'Lihat Profil',
+          value: 'Profil',
           subtitle: 'Lihat profil',
         ),
       ],
