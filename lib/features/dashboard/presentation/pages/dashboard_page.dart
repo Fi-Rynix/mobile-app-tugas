@@ -20,10 +20,10 @@ class DashboardPage extends ConsumerWidget {
         return Icons.school_rounded;
       case 'Mahasiswa Aktif':
         return Icons.person_outline_rounded;
-      case 'Jumlah Kelas':
-        return Icons.workspace_premium_rounded;
       case 'Dosen':
         return Icons.people_outline_rounded;
+      case 'Profil':
+        return Icons.account_circle_rounded;
       default:
         return Icons.analytics_outlined;
     }
@@ -237,7 +237,7 @@ class DashboardPage extends ConsumerWidget {
                                   case 'Dosen':
                                     targetPage = const DosenPage();
                                     break;
-                                  case 'Jumlah Kelas':
+                                  case 'Profil':
                                     targetPage = const ProfilePage();
                                     break;
                                 }
