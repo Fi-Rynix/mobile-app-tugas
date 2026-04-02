@@ -1,48 +1,23 @@
-import 'dart:convert';
-import 'package:first_proj/features/dosen/data/models/dosen_model.dart';
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
+import 'package:first_proj/core/network/dio_client.dart';
+import 'package:first_proj/features/dosen/data/models/dosen_model.dart';
 
 class DosenRepository {
-  //// Mendapatkan daftar dosen
-  // Future<List<DosenModel>> getDosenList() async {
-  //   final response = await http.get(
-  //     Uri.parse('https://jsonplaceholder.typicode.com/users'),
-  //     headers: {'Accept': 'application/json'},
-  //   );
+  final DioClient _dioClient;
 
-  //   if (response.statusCode == 200) {
-  //     final List<dynamic> data = jsonDecode(response.body);
-  //     print(data); // Debug: Tampilkan data yang sudah di-decode
-  //     return data.map((json) => DosenModel.fromJson(json)).toList();
-  //   } else {
-  //     print('Error: ${response.statusCode} - ${response.body}');
-  //     throw Exception('Gagal memuat data dosen: ${response.statusCode}');
-  //   }
-  // }
+  DosenRepository(DioClient dioClient)
+      : _dioClient = dioClient ?? DioClient();
 
+  /// get data daftar dosen
   Future<List<DosenModel>> getDosenList() async {
-  final dio = Dio();
-
-  try {
-    final response = await dio.get(
-      'https://jsonplaceholder.typicode.com/users',
-      options: Options(
-        headers: {'Accept': 'application/json'},
-      ),
-    );
-
-    if (response.statusCode == 200) {
+    try {
+      final response = await _dioClient.dio.get('/users');
       final List<dynamic> data = response.data;
-      print(data); // Debug
       return data.map((json) => DosenModel.fromJson(json)).toList();
-    } else {
-      print('Error: ${response.statusCode} - ${response.data}');
-      throw Exception('Gagal memuat data dosen: ${response.statusCode}');
+    } on DioException catch (e) {
+      throw Exception(
+        'Gagal memuat data dosen: ${e.response?.statusCode} - ${e.message}',
+      );
     }
-  } catch (e) {
-    print('Error Dio: $e');
-    throw Exception('Terjadi kesalahan saat mengambil data');
   }
-}
 }

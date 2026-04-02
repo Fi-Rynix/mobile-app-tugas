@@ -1,33 +1,23 @@
-import 'dart:convert';
-import 'package:first_proj/features/mahasiswa/data/models/comment_model.dart';
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
+import 'package:first_proj/core/network/dio_client.dart';
+import 'package:first_proj/features/mahasiswa/data/models/comment_model.dart';
 
 class MahasiswaCommentRepository {
-  /// Mengambil komentar menggunakan http
-  Future<List<MahasiswaCommentModel>> getCommentsHttp() async {
-    final response = await http.get(
-      Uri.parse('https://jsonplaceholder.typicode.com/comments'),
-      headers: {'Accept': 'application/json'},
-    );
+  final DioClient _dioClient;
 
-    if (response.statusCode == 200) {
-      final List<dynamic> data = jsonDecode(response.body);
-      return data.map((json) => MahasiswaCommentModel.fromJson(json)).toList();
-    } else {
-      throw Exception('Gagal memuat komentar: ${response.statusCode}');
-    }
-  }
+  MahasiswaCommentRepository(DioClient dioClient)
+      : _dioClient = dioClient ?? DioClient();
 
-  // Mengambil komentar menggunakan dio
-  Future<List<MahasiswaCommentModel>> getCommentsDio() async {
-    final dio = Dio();
-    final response = await dio.get('https://jsonplaceholder.typicode.com/comments');
-    if (response.statusCode == 200) {
+  /// Get data daftar komentar
+  Future<List<MahasiswaCommentModel>> getCommentsList() async {
+    try {
+      final response = await _dioClient.dio.get('/comments');
       final List<dynamic> data = response.data;
       return data.map((json) => MahasiswaCommentModel.fromJson(json)).toList();
-    } else {
-      throw Exception('Gagal memuat komentar: ${response.statusCode}');
+    } on DioException catch (e) {
+      throw Exception(
+        'Gagal memuat komentar: ${e.response?.statusCode} - ${e.message}',
+      );
     }
   }
 }
